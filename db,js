@@ -1,0 +1,22 @@
+const sql = require('mssql');
+
+const config = {
+    user: 'sa',            // change if needed
+    password: 'your_password',  // change this
+    server: 'localhost',
+    database: 'studentwell',
+    options: {
+        encrypt: false,
+        trustServerCertificate: true
+    }
+};
+
+const pool = new sql.ConnectionPool(config);
+const poolConnect = pool.connect();
+
+module.exports = {
+    sql,
+    pool,
+    poolConnect
+};
+
