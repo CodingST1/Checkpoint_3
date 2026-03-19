@@ -53,3 +53,22 @@ Example Request:
 }
 
 Status Codes: 201, 400, 500
+
+## Authentication
+
+This API uses JWT authentication.
+
+Users log in using email and password and receive a token.
+
+Authorization header:
+Bearer <token>
+
+Logout is handled client-side by deleting the token.
+
+## Protected Routes
+
+GET /api/users → requires authentication  
+GET /api/users/:id → requires authentication  
+POST /api/appointments → requires authentication  
+DELETE /api/appointments/:id → requires authentication  
+DELETE /api/users/:id → requires authentication  
